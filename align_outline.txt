@@ -1,0 +1,23 @@
+﻿The problem to solve: Given two DNA sequences S and T, find an alignment of S and T with the greatest possible "score." A DNA sequence is a (non-empty) string consisting only of the characters A, C, T, and G. (However, the program you write should be able to perform comparisons between arbitrary strings.)
+
+Helper functions:
+	instruction - takes two strings compare them and output the instruction string
+	score - takes the instruction string and output the score
+
+Base cases: Aligning two strings, at least one of which is empty
+	- get the instruction string
+	- calculate score 
+	- output solution
+
+Recursion to compare shorter strings:
+	1. introduce a gap in s2 and remove char from s1
+            2,  introduce a gap in s1 and remove char from s2
+	3, introduce no gap and  remove chars from both strings
+
+	get three alignments back(instruction and score) and add the score for the removed char
+
+	to avoid redundant calls -> store the result of the search with key (s1 + “,” + s2) 
+
+	return the best score and alignment
+	
+
